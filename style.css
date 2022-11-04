@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* || RESET */
+*
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+/* || VARIABLES */
+
+:root {
+    /* FONTS */
+    --FONT-FAMILY: 'Poppins', sans-serif;
+    --FONT-200: 200;
+    --FONT-400: 400;
+    --FONT-600: 600;
+
+    /* COLORS */
+    --RED: hsl(0, 78%, 62%);
+    --CYAN: hsl(180, 62%, 55%);
+    --ORANGE: hsl(34, 97%, 64%);
+    --BLUE: hsl(212, 86%, 64%);
+
+    --DARK-GRAY:hsl(234, 12%, 34%);
+    --MEDIUM-GRAY: hsl(229, 6%, 66%);
+    --LIGHT-GRAY: hsl(0, 0%, 98%);
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--LIGHT-GRAY);
+    font-family: var(--FONT-FAMILY);
+}
+
+header {
+    margin: 0 auto;
+    width: 34rem;
+    text-align: center;
+}
+
+.icon {
+    margin-top: 2.5rem;
+    position: relative;
+    left: 14rem;
+}
+
+h1 {
+    margin-top: 5rem;
+    font-weight: var(--FONT-200);
+    font-size: 2.25rem;
+    line-height: 54px;
+    letter-spacing: 0.25px;
+    color: var(--DARK-GRAY);
+}
+
+h1 .bold {
+    font-weight: var(--FONT-600);
+    font-size: 2.25rem;
+    line-height: 54px;
+    letter-spacing: 0.25px;
+}
+
+header p {
+    font-weight: var(--FONT-400);
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.104167px;
+    color: var(--DARK-GRAY);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+h2 {
+    text-align: left;
+    font-weight: var(--FONT-600);
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--DARK-GRAY);
+}
+.wrapper p{
+    width: 18rem;
+    font-weight: var(--FONT-400);
+    font-size: 15px;
+    line-height: 25px;
+    text-align: left;
+    letter-spacing: 0.104167px;
+    color: var(--DARK-GRAY);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.container1,
+.container2,
+.container3,
+.container4 {
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+    border-radius: 6px;
+    padding: 2rem;
+}
+.container1 {
+    border-top: 4px solid var(--CYAN);
+}
+.container2 {
+    border-top: 4px solid var(--RED);
+}
+.container3 {
+    border-top: 4px solid var(--ORANGE);
+}
+.container4 {
+    border-top: 4px solid var(--BLUE);
+}
+
+
+/* || FOOTER */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 2rem;
+    color: var(--DARK-GRAY);
+}
+.attribution a { 
+    color: var(--CYAN);
+    text-decoration: none; 
+}
+
+/* ||  MEDIA QUERIES   */
+@media screen and (max-width: 599px) {
+    .wrapper {
+        display: grid;
+        gap: 1.5rem;
+        width: 20rem;
+        margin-top: 4.75rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width:900px){
+    .dataPoints{
+        width: 46rem;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper {
+        display: grid;
+        gap: 1.75rem;
+        width: 21rem;
+        margin-top: 4rem;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 901px){
+    .dataPoints {
+        width: 70rem;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper {
+        display: grid;
+        gap: 1.875rem;
+        width: 22rem;
+        margin-top: 4rem;
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "container1 container2 container4"
+            "container1 container3 container4";
+    }
+    .container1 {
+        grid-area: container1;
+        align-self: center;
+    }
+    .container2 {
+        grid-area: container2;
+    }
+    .container3 {
+        grid-area: container3;
+    }
+    .container4 {
+        grid-area: container4;
+        align-self: center;
+    }
+}
